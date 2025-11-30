@@ -234,8 +234,21 @@
       <p style="font-size:0.8rem;color:#555;">Hier mit Finger oder Maus unterschreiben.</p>
       <canvas id="signaturePad"></canvas>
       <div class="buttons" style="margin-top:0.5rem;">
-        <button class="seco
-      <script>
+        <button class="secondary" id="btnClearSig">Unterschrift löschen</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;">
+      <div style="flex:1 1 200px;">
+        <div style="border-bottom:1px solid #999;height:1.2rem;margin-bottom:0.25rem;"></div>
+        <div style="font-size:0.8rem;color:#666;">Datum</div>
+      </div>
+      <div style="flex:1 1 200px;">
+        <div style="border-bottom:1px solid #999;height:1.2rem;margin-bottom:0.25rem;"></div>
+        <div style="font-size:0.8rem;color:#666;">Unterschrift</div>
+      </div>
+    </div>
+    <script>
       const days = ["montag","dienstag","mittwoch","donnerstag","freitag","samstag"];
 
       function timeToMinutes(timeStr) {
@@ -365,7 +378,7 @@
         const encoded = encodeURIComponent(buildWhatsAppText());
         window.open("https://wa.me/?text=" + encoded, "_blank");
       }
-       /* ====== SIGNATUR FELD ====== */
+      /* ====== SIGNATUR FELD ====== */
       function setupSignaturePad() {
         const canvas = document.getElementById("signaturePad");
         const ctx = canvas.getContext("2d");
